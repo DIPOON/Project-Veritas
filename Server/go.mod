@@ -1,3 +1,3 @@
-module github.com/DiPoon/ProjectVeritas/Server
+module github.com/DiPoon/Project-Veritas/Server
 
 go 1.26.5

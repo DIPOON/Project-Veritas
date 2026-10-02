@@ -19,7 +19,7 @@ func main() {
 	// os signal 구독
 	sigs := make(chan os.Signal, 1)
 	workerDone := make(chan struct{})
-	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
+	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM) // 완료 보장 우선. 후속 종료 신호는 무시하고 끝까지 기다립니다
 	producerShutdown := make(chan struct{})
 	go func() {
 		sig := <-sigs
